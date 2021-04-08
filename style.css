@@ -1,15 +1,54 @@
+body {
+	background-image: url("space.jpg");
+	font-family: flower-power, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 25px;
+  line-height: 70%;
+  float: left;
+}
+
 .genreTag {
   padding:4px 8px;
-  border: 1px solid black;
+  border: 1px solid white;
   margin: 4px;
+  font-family: flower-power, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 30px;
+  color: red;
 }
 
 .songContainer{
-  padding:16px 24px;
-  border:1px solid black;
-  margin:8px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  padding-left: 5%;
+  border:1px solid white;
+  margin:1%;
+  color: white;
+  background-color: rgb(255,255,255,0.2);
+  color: yellow;
 }
 
 h1 {
-	color: blue;
+	color: red;
+	font-size: 50px;
+}
+
+.filter {
+	color: white;
+	font-family: flower-power, sans-serif;
+  	font-weight: 500;
+  	font-style: normal;
+  	font-size: 20px;
+  	color: red;
+}
+
+.choose {
+	font-family: flower-power, sans-serif;
+  	font-weight: 500;
+  	font-style: normal;
+  	font-size: 20px;
+  	color: red;
+  	background-color: white;
 }
