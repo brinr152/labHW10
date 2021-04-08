@@ -15,7 +15,7 @@ var base = new Airtable({ apiKey: "keyam67l6qKyeDk5M" }).base(
 // specify the view (which should be SORTED by rating),
 // and specify the callback functions that will receive each page of data
 base("songs").select({
-  view: "title"
+  view: "Grid"
 }).eachPage(gotPageOfData, gotAllData);
 
 // an empty array to hold our songs data
@@ -96,25 +96,110 @@ function showData() {
     ADD GENRES
     *******************/
 
-    let genresList = song.fields.genres;
+    let genreList = song.fields.genre;
 
-    genresList.forEach(function(genre){
+    genreList.forEach(function(genre){
       const genreElement = document.createElement("span");
       genreElement.classList.add("genreTag");
       genreElement.innerText = genre;
       songContainer.appendChild(genreElement);
 
       // TODO: Add this genre name as a class to the songContainer
+      var songGenre = song.fields.genre;
+      songGenre.forEach(function(genre){
+        songContainer.classList.add(genre)
+      })
 
+      var filterIndie = document.querySelector("#indie");
+      filterIndie.addEventListener("click", function(){
+
+        if (songContainer.classList.contains("indie")) {
+          songContainer.style.display = "block";
+        } else {
+          songContainer.style.display = "none";
+        }
+      })
+
+      var filterAlternative = document.querySelector("#alternative");
+      filterAlternative.addEventListener("click", function(){
+
+        if (songContainer.classList.contains("alternative")) {
+          songContainer.style.display = "block";
+        } else {
+          songContainer.style.display = "none";
+        }
+      })
+
+      var filterPop = document.querySelector("#pop");
+      filterPop.addEventListener("click", function(){
+
+        if (songContainer.classList.contains("pop")) {
+          songContainer.style.display = "block";
+        } else {
+          songContainer.style.display = "none";
+        }
+      })
+
+      var filterRock = document.querySelector("#rock");
+      filterRock.addEventListener("click", function(){
+
+        if (songContainer.classList.contains("rock")) {
+          songContainer.style.display = "block";
+        } else {
+          songContainer.style.display = "none";
+        }
+      })
+    
+    var filterDisco = document.querySelector("#disco");
+      filterDisco.addEventListener("click", function(){
+
+        if (songContainer.classList.contains("disco")) {
+          songContainer.style.display = "block";
+        } else {
+          songContainer.style.display = "none";
+        }
+      })
+
+      var filterDance = document.querySelector("#dance");
+      filterDance.addEventListener("click", function(){
+
+        if (songContainer.classList.contains("dance")) {
+          songContainer.style.display = "block";
+        } else {
+          songContainer.style.display = "none";
+        }
+      })
+
+      var filterMusical = document.querySelector("#musical");
+      filterMusical.addEventListener("click", function(){
+
+        if (songContainer.classList.contains("musical")) {
+          songContainer.style.display = "block";
+        } else {
+          songContainer.style.display = "none";
+        }
+      })
+
+      var filterCover = document.querySelector("#cover");
+      filterCover.addEventListener("click", function(){
+
+        if (songContainer.classList.contains("cover")) {
+          songContainer.style.display = "block";
+        } else {
+          songContainer.style.display = "none";
+        }
+      })
+
+      var filterReset = document.querySelector("#reset");
+      filterReset.addEventListener("click", function(){
+        songContainer.style.display = "block";
+      })
 
     });
-
 
     /***********
      TODO: CREATE FILTER-BY-GENRE FUNCTIONALITY
      **********/
-
-
      
 
     songsContainer.appendChild(songContainer);
